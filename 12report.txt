@@ -1,0 +1,13 @@
+Wed Jan 10 16:34:40 PST 2024
+Hello devinfan, your home directory is: /Users/devinfan
+The current shell is operation is: /bin/bash
+Current location of files is: /Users/devinfan/Code/mcb185_homework
+Path to find this is: /Users/devinfan/opt/anaconda3/bin:/Users/devinfan/opt/anaconda3/condabin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin
+Darwin MacBook-Air-269.local 22.3.0 Darwin Kernel Version 22.3.0: Mon Jan 30 20:39:35 PST 2023; root:xnu-8792.81.3~2/RELEASE_ARM64_T8103 arm64
+Python 3.9.7
+/Users/devinfan/Code
+/Users/devinfan/Code/mcb185_homework
+/Users/devinfan/Code/mcb185_homework/.git
+/Users/devinfan/Code/MCB185
+/Users/devinfan/Code/MCB185/.git
+/Users/devinfan/Code/MCB185/data
