@@ -6,4 +6,4 @@ gunzip -c dictionary.gz | grep "b" | grep -E "[tailnrb]{4,}" | grep -v "[^tailnr
 gunzip -c dictionary.gz | grep "c" | grep -E "[maonidc]{4,}" | grep -v "[^maonidc]" | wc
 gunzip -c dictionary.gz | grep "z" | grep -E "[anorgiz]{4,}" | grep -v "[^anorgiz]" | wc
 
-gunzip -c jaspar2024_core.transfac.gz
+gunzip -c JASPAR.gz
