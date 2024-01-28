@@ -1,19 +1,42 @@
 #Co-Authors - Devin Fan, Sophia Chen
-
 import math
 
-def shannon(a, c, g, t):
-	total = a + c + g + t
+def shannon(a, c, t, g):
+	total = a + c + t + g
+	prob_a = a / total
+	prob_c = c / total
+	prob_t = t / total
+	prob_g = g / total
 	
-	p_a = a / total
-	p_c = c / total
-	p_g = g / total
-	p_t = t / total
-	
-	entropy = - (p_a * math.log2(p_a)) - (p_c * math.log2(p_c)) - (p_g * math.log2(p_g)) - (p_t * math.log2(p_t))
-    
-	return entropy
-	
-print(shannon(1,2,3,5))
-print(shannon(10,20,30,50))
-print(shannon(69,420,1,6))
+	if a == 0:
+		info_c = math.log2(prob_c)
+		info_t = math.log2(prob_t)
+		info_g = math.log2(prob_g)
+		h = -(prob_c * info_c + prob_t * info_t + prob_g * info_g)
+	elif c == 0:
+		info_a = math.log2(prob_a)
+		info_t = math.log2(prob_t)
+		info_g = math.log2(prob_g)
+		h = -(prob_a * info_a + prob_t * info_t + prob_g * info_g)
+	elif t == 0:
+		info_a = math.log2(prob_a)
+		info_c = math.log2(prob_c)
+		info_g = math.log2(prob_g)
+		h = -(prob_a * info_a + prob_c * info_c + prob_g * info_g)
+	elif g == 0: 
+		info_a = math.log2(prob_a)
+		info_c = math.log2(prob_c)
+		info_t = math.log2(prob_t)
+		h = -(prob_a * info_a + prob_c * info_c + prob_t * info_t)
+	else:
+		info_a = math.log2(prob_a)
+		info_c = math.log2(prob_c)
+		info_t = math.log2(prob_t)
+		info_g = math.log2(prob_g)
+		h = -(prob_a * info_a + prob_c * info_c + prob_t * info_t + prob_g * info_g)
+	print('Shannon entropy is:', round(h, 4))
+	return h
+
+shannon(0,2,3,5)
+shannon(10,20,30,50)
+shannon(69,420,1,6)
