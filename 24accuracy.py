@@ -1,3 +1,4 @@
+#Co-Authors - Devin Fan, Sophia Chen
 def acc_f1 (tpos,fpos,tneg,fneg):
 	acc = (tpos + tneg)/(tpos + fpos + tneg + fneg)
 	percision = tpos / (tpos + fpos)
