@@ -37,6 +37,6 @@ def shannon(a, c, t, g):
 	print('Shannon entropy is:', round(h, 4))
 	return h
 
-shannon(0,2,3,5)
-shannon(10,20,30,50)
-shannon(69,420,1,6)
+shannon(0, 2, 3, 5)
+shannon(10, 20, 30, 50)
+shannon(69, 420, 1, 6)

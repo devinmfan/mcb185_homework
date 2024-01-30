@@ -1,5 +1,5 @@
 #Co-Authors - Devin Fan, Sophia Chen
-def hydro (x):
+def hydro(x):
 
 	if x == "A":
 		print("1.8")
