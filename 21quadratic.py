@@ -8,6 +8,6 @@ def quad (a, b, c):
 	
 	return x1, x2
 
-print(quad(1,2,1))
-print(quad(2,-4,-1))
-print(quad(1,-5,-14))
+print(quad(1, 2, 1))
+print(quad(2, -4, -1))
+print(quad(1, -5, -14))

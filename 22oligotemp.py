@@ -8,10 +8,10 @@ def oligotemp (A,C,G,T):
 		
 	return Tm
 
-print(oligotemp(2,6,9,15))
+print(oligotemp(2, 6, 9, 15))
 
-print(oligotemp(100,100,100,100))
+print(oligotemp(100, 100, 100, 100))
 
-print(oligotemp(2,4,4,3))
+print(oligotemp(2, 4, 4, 3))
 
-print(oligotemp(2,4,4,4))
+print(oligotemp(2, 4, 4, 4))
