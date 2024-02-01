@@ -10,6 +10,6 @@ def poisson(n, k):
 	x = (n**k * math.exp(-n)) / fack
 	return x
 
-print(poisson(6,9))
-print(poisson(420,69))
-print(poisson(8,16))
+print(poisson(6, 9))
+print(poisson(420, 69))
+print(poisson(8, 16))
