@@ -10,6 +10,14 @@ def nilakantha(i):
 
 	return result
 
+i = 1
+est = nilakantha(1)
+print(f"Estimated Pi after 1 iterations:" ,est)
+
+i = 10
+est = nilakantha(10)
+print(f"Estimated Pi after 10 iterations:" ,est)
+
 i = 100
-est = nilakantha(i)
-print(f"Estimated Pi after", i,  "iterations:" ,est)
+est = nilakantha(100)
+print(f"Estimated Pi after 100 iterations:" ,est)
