@@ -1,3 +1,5 @@
+#Co-Authors - Devin Fan, Sophia Chen
+
 def bigfac(n, k):
 	if n == 0: return 1
 	facn = 1
@@ -19,3 +21,5 @@ def bigfac(n, k):
 	return x
 
 print(bigfac(10, 6))
+print(bigfac(1, 1))
+print(bigfac(42, 11))

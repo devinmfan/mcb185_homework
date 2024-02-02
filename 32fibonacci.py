@@ -1,3 +1,5 @@
+#Co-Authors - Devin Fan, Sophia Chen
+
 limit = 5
 i = 0
 num1 = 0
