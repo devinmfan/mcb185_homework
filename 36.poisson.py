@@ -9,7 +9,7 @@ def poisson(n, k):
 	for i in range(1, k + 1):
 		fack = fack * i
 	
-	x = (n**k * math.exp(-n)) / fack
+	x = n * (n**k * math.exp(-n)) / fack
 	return x
 
 print(poisson(6, 9))
