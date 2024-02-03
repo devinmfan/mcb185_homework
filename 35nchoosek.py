@@ -1,6 +1,6 @@
 #Co-Authors - Devin Fan, Sophia Chen
 
-def bigfac(n, k):
+def nchoosek(n, k):
 	if n == 0: return 1
 	facn = 1
 	for i in range(1, n + 1):
@@ -20,6 +20,6 @@ def bigfac(n, k):
 	x = facn / (fack * (facnk))
 	return x
 
-print(bigfac(10, 6))
-print(bigfac(1, 1))
-print(bigfac(42, 11))
+print(nchoosek(10, 6))
+print(nchoosek(1, 1))
+print(nchoosek(42, 11))
