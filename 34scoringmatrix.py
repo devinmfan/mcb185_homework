@@ -3,7 +3,7 @@ alph = 'ACGT'
 
 print(" ", end=' ')
 for i in alph:
-	print(" " + i, end=' ')
+	print('', i, end=' ')
 print()
 
 for nt1 in alph:

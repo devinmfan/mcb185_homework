@@ -5,11 +5,11 @@ import math
 def poisson(n, k):
 	
 	if k == 0: return 1
-	fack = 1
+	fac = 1
 	for i in range(1, k + 1):
-		fack = fack * i
+		fac = fac * i
 	
-	x = n * (n**k * math.exp(-n)) / fack
+	x = n * (n**k * math.exp(-n)) / fac
 	return x
 
 print(poisson(6, 9))
