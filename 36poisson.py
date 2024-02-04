@@ -13,5 +13,5 @@ def poisson(n, k):
 	return x
 
 print(poisson(6, 9))
-print(poisson(420, 69))
+print(poisson(25, 12))
 print(poisson(8, 16))
