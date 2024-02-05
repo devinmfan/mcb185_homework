@@ -4,7 +4,8 @@ inner = 0
 i = 1
 
 while True:
-	x, y = random.random(), random.random()
+	x = random.random()
+	y = random.random()
 
 	origin = x**2 + y**2
 
