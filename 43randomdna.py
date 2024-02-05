@@ -1,3 +1,5 @@
+#Co-Authors - Devin Fan, Sophia Chen
+
 import random
 
 for seq in range(3):
