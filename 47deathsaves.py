@@ -1,3 +1,5 @@
+#Co-Authors - Devin Fan, Sophia Chen
+
 import random
 
 fail = 0
@@ -21,7 +23,7 @@ for i in range(10000):
 			health += 1
 	
 	if successes == 3:
-   		suc = suc + 1
+		suc = suc + 1
 	elif failures == 3:
 		fail = fail + 1
 	else:
@@ -31,6 +33,6 @@ suc = suc / 10000
 fail = fail / 10000
 stab = stab / 10000
 
-print(f"Probability of being revived: {suc:.4f}")
-print(f"Probability of stabilizing: {stab:.4f}")
-print(f"Probability of dying: {fail:.4f}")
+print("Probabilty of being revived:", suc)
+print("Probabilty of being stabailized:", stab)
+print("Probablity of dying:", fail)
