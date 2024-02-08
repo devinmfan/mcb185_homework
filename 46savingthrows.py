@@ -53,18 +53,6 @@ def disad(dc):
 	prob = suc / 10000
 	return prob
 
-	
-saving_sim(5)
-disad(5)
-ad(5)
-
-saving_sim(10)
-disad(10)
-ad(10)
-	
-saving_sim(15)	
-disad(15)
-ad(15)
 
 dc = 5, 10, 15
 
