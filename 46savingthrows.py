@@ -6,12 +6,12 @@ import random
 
 def saving_sim(dc):
 	suc = 0
-	for i in range(1, 10000):
+	for i in range(1, 100000):
 		result = random.randint(1, 20)	
 		
 		if result >= dc:
 			suc = suc + 1
-	prob = suc / 10000
+	prob = suc / 100000
 	return prob
 
 #advantage
@@ -19,7 +19,7 @@ def saving_sim(dc):
 result = 0
 def ad(dc):
 	suc = 0
-	for i in range(1, 10000):
+	for i in range(1, 100000):
 		roll1 = random.randint(1, 20)
 		roll2 = random.randint(1, 20)
 		if roll1 > roll2: 
@@ -30,7 +30,7 @@ def ad(dc):
 
 		if result >= dc:
 			suc = suc + 1
-	prob = suc / 10000
+	prob = suc / 100000
 	return prob
 
 
@@ -40,7 +40,7 @@ def ad(dc):
 result = 0
 def disad(dc):
 	suc = 0
-	for i in range(1, 10000):
+	for i in range(1, 100000):
 		roll1 = random.randint(1, 20)
 		roll2 = random.randint(1, 20)
 		if roll1 < roll2:
@@ -50,7 +50,7 @@ def disad(dc):
 
 		if result >= dc:
 			suc = suc + 1
-	prob = suc / 10000
+	prob = suc / 100000
 	return prob
 
 
