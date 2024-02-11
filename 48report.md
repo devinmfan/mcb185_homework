@@ -8,6 +8,6 @@
  10  0.5438  0.7918     0.3012 <br />
  15  0.2976  0.5102     0.0885 <br />
 
-Probabilty of being revived: 0.1838
-Probabilty of being stabailized: 0.4143
-Probablity of dying: 0.4019
+Probabilty of being revived: 0.1838 <br />
+Probabilty of being stabailized: 0.4143 <br />
+Probablity of dying: 0.4019 <br />
