@@ -1,7 +1,7 @@
-3d6: 10.5 \n
-3d6r1: 12.0
-3d6x2: 13.4
-4D6d1: 12.3
+3d6: 10.5 <br />
+3d6r1: 12.0 <br />
+3d6x2: 13.4 <br />
+4D6d1: 12.3 <br />
 
  DC  Normal  Advantage  Disadvantage
  5   0.7994  0.9618     0.6421 
