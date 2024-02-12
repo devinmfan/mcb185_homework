@@ -5,8 +5,9 @@ import random
 fail = 0
 rev = 0
 stab = 0
+trials = 10000
 
-for i in range(10000):
+for i in range(trials):
 	failures = 0
 	successes = 0
 	revives = 0
@@ -29,9 +30,9 @@ for i in range(10000):
 	elif revives == 1:
 		rev = rev + 1
 
-stab = stab / 10000
-fail = fail / 10000
-rev = rev / 10000
+stab = stab / trials
+fail = fail / trials
+rev = rev / trials
 
 print("Probabilty of being revived:", rev)
 print("Probabilty of being stabailized:", stab)
