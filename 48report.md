@@ -13,6 +13,8 @@ Roll 4 six-sided dice, dropping the lowest roll: 12.2008
 | DC | Normal | Advantage | Disadvantage |
 
 | 5 | 0.7914 | 0.9585 | 0.6411 |
+
 | 10 | 0.5452 | 0.7901 | 0.3041 |
+
 | 15 | 0.2980 | 0.5112 | 0.0886 |
 
