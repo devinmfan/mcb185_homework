@@ -9,7 +9,7 @@ def acc_f1(tpos, fpos, tneg, fneg):
 	
 	f1 = 2 * ((percision * recall)/(percision + recall))
 	
-	print("Accuracy is: " , acc + ", F1 Score is:" , f1)
+	print("Accuracy is: " , acc , ", F1 Score is:" , f1)
 	
 	return
 	

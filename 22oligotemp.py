@@ -1,5 +1,5 @@
 #Co-Authors - Devin Fan, Sophia Chen
-def oligotemp A, C, G, T):
+def oligotemp(A, C, G, T):
 	nt = A + C + G + T
 	if nt <= 13:
 		Tm = (A + T) * 2 + (G + C) * 4
