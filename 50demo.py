@@ -7,7 +7,7 @@ for nt in seq: print(nt, end='')
 print()
 
 for i in range(len(seq)):
-    print(i, seq[i])
+	print(i, seq[i])
     
 s = 'ABCDEFGHIJ'
 print(s[0:5])
@@ -26,9 +26,9 @@ s[0] = 'C'
 tax[0] = 'human'
 
 def quadratic(a, b, c):
-    x1 = (-b + (b**2 - 4*a*c)**0.5) / (2*a)
-    x2 = (-b - (b**2 - 4*a*c)**0.5) / (2*a)
-    return x1, x2
+	x1 = (-b + (b**2 - 4*a*c)**0.5) / (2*a)
+	x2 = (-b - (b**2 - 4*a*c)**0.5) / (2*a)
+	return x1, x2
     
     
 x1, x2 = quadratic(5, 6, 1)  
@@ -37,20 +37,20 @@ print(x1, x2)
 
 nts = 'ACGT'
 for i in range(len(nts)):
-    print(i, nts[i])
+	print(i, nts[i])
     
 for i, nt in enumerate(nts):
-    print(i, nt)
+	print(i, nt)
     
 names = ('adenine', 'cytosine', 'guanine', 'thymine')
 for i in range(len(names)):
-    print(nts[i], names[i])
+	print(nts[i], names[i])
     
 for nt, name in zip(nts, names):
-    print(nt, name)
+	print(nt, name)
     
 for i, (nt, name) in enumerate(zip(nts, names)):
-    print(i, nt, name)
+	print(i, nt, name)
     
 nts = ['A', 'T', 'C']
 print(nts)
@@ -87,7 +87,7 @@ text = 'good day   to you'
 words = text.split()
 print(words)
 
-line = '1.41,2.72,3.14'
+line = '1.41, 2.72, 3.14'
 print(line.split(','))
 
 s = '-'.join(aas)
