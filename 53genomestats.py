@@ -17,6 +17,23 @@ def calc_std_dev(data):
 	std_dev = math.sqrt(variance)
 	return std_dev
 
+def minimum(vals):
+	mini = vals[0]
+	for val in vals[1:]:
+		if val < mini: mini = val
+	return mini
+	
+def maximum(vals):
+	maxi = vals[0]
+	for val in vals[1:]:
+		if val < maxi: maxi = val
+	return maxi
+	
+def mean(vals):
+	total = 0
+	for val in vals: total += val
+	return total / len(vals)
+
 print(f"| Genome         | Type |  N   | Min |  Max  | Mean | Stdv | Med  |")
 print(f"|:---------------|:-----|:-----|:----|:------|:-----|:-----|:-----|")
 
@@ -31,9 +48,9 @@ with gzip.open(gffpath, 'rt') as fp:
 				lengths.append(end - beg + 1)
 
 n = len(lengths)
-mini = min(lengths)
-maxi = max(lengths)
-mean = sum(lengths) / n
+mini_val = minimum(lengths)
+maxi_val = maximum(lengths)
+mean = mean(lengths)
 std_dev = calc_std_dev(lengths)
 lengths.sort()
 
@@ -45,4 +62,4 @@ if len(lengths) % 2 == 0:
 else:
 	med = lengths[int(n)//2]
 
-print(f"| {gffpath} | {feature} | {n} | {mini} | {maxi} | {mean:.2f} | {std_dev:.2f} | {med:.2f} |")
+print(f"| {gffpath} | {feature} | {n} | {mini_val} | {maxi_val} | {mean:.2f} | {std_dev:.2f} | {med:.2f} |")
