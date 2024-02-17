@@ -1,3 +1,5 @@
+#Co-Authors: Devin Fan & Sophia Chen
+
 import gzip
 import sys
 import math
@@ -51,7 +53,7 @@ n = len(lengths)
 mini_val = minimum(lengths)
 maxi_val = maximum(lengths)
 mean = mean(lengths)
-std_dev = calc_std_dev(lengths)
+std = calc_std_dev(lengths)
 lengths.sort()
 
 if len(lengths) % 2 == 0:
@@ -62,4 +64,4 @@ if len(lengths) % 2 == 0:
 else:
 	med = lengths[int(n)//2]
 
-print(f"| {gffpath} | {feature} | {n} | {mini_val} | {maxi_val} | {mean:.2f} | {std_dev:.2f} | {med:.2f} |")
+print(f"| {gffpath} | {feature} | {n} | {mini_val} | {maxi_val} | {mean:.2f} | {std:.2f} | {med:.2f} |")

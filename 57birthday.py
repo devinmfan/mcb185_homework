@@ -1,3 +1,5 @@
+#Co-Authors: Devin Fan & Sophia Chen
+
 import random
 import sys
 
@@ -21,4 +23,4 @@ for i in range(trials):
 		unique_birthdays.append(birthday)
 
 probability = shared_birthday_count / trials
-print(f"Probability of shared birthdays with {people} people in {trials} trials is approx: {probability * 100:.2f}%")
+print(f"Probability of shared birthday is approx: {probability * 100:.2f}%")
