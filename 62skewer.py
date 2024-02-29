@@ -3,16 +3,36 @@ import sys
 import mcb185
 
 seq = sys.argv[1]
-window = int(sys.argv[2])
+w = int(sys.argv[2])
 
-codon = []
+nts = []
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
+	defwords = defline.split()
+	name = defwords[0]
 	for nt in seq:
-		if nt in 'CGAT': 
-			codon.append(nt)
-seq = ''.join(codon)
+		nts.append(nt)
 
-for i in range(0, len(seq), window):
-	s = seq[i:i+window]
-	print(f'{i}\t{dogma.gc_comp(s):.3f}\t{dogma.gc_skew(s):.3f}')
+seq = ''.join(nts)
+
+g = seq[0:w].count('G')
+c = seq[0:w].count('C')
+
+for i in range(len(seq) - w):
+	off = seq[i]
+	on = seq[i+w]
+	
+	if off == 'C': c -= 1
+	elif off == 'G': g -= 1
+	
+	if on == 'C': c -= 1
+	elif on == 'G': g -= 1
+	
+	gc = (c+g) / w
+	
+	if (g+c) > 0: 
+		skew = (g-c) / (g+c)
+	else: 
+		skew = 0
+	
+	print(i, gc, skew)
 
