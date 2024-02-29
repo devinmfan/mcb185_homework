@@ -1,24 +1,37 @@
 import sys
 import dogma
 import mcb185
-import math
 
 file = sys.argv[1]
-length = int(sys.argv[2])
+min_length = int(sys.argv[2])
 
 codon = []
+protein_sequence = []
+
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
-	#defwords = defline.split()
-	for nt in seq:
-		if nt == 'C' or nt == 'G' or nt == 'A' or nt == 'T': 
-			codon.append(nt)
+    defwords = defline.split()
+    name = defline[0]  
+    for nt in seq:
+        codon.append(nt)
+
 seq = ''.join(codon)
-x = dogma.translate(seq)
+rev = dogma.revcomp(seq)
+x = dogma.translate(rev)
 
-for i in x:
-	if i == "M":
-		print("M")
+pro = []
+deflines = []
 
-for i in x:
-	if i == "*":
-		print("*")
+for i in range(len(x)):
+    if x[i] == "M":
+        protein_segment = [x[i]]
+        for j in range(i + 1, len(x)):
+            if x[j] == "*":
+                break
+            protein_segment.append(x[j])
+        pro.append(''.join(protein_segment))
+        deflines.append(defline)
+
+for defline, protein in zip(deflines, pro):
+    if len(protein) >= min_length:
+        print(defline)
+        print(protein)
