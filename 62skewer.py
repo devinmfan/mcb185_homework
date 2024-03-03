@@ -24,8 +24,8 @@ for i in range(len(seq) - w):
 	if off == 'C': c -= 1
 	elif off == 'G': g -= 1
 	
-	if on == 'C': c -= 1
-	elif on == 'G': g -= 1
+	if on == 'C': c += 1
+	elif on == 'G': g += 1
 	
 	gc = (c+g) / w
 	
