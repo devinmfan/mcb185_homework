@@ -1,32 +1,30 @@
-import sys
-import mcb185
+#Co-authors: Sophia Chen and Devin Fan
+
+import dogma
 import itertools
+import mcb185
+import sys
 
-def count_kmers(seq, k):
-	kcount = {}
-	for i in range(len(seq) - k + 1):
-		kmer = seq[i:i+k]
-		if kmer not in kcount:
-			kcount[kmer] = 0
-		kcount[kmer] += 1
-	return kcount
+k = 1 
+kcount = {}
+n = 0 
 
-def print_kmers(kcount):
-	for kmer, n in kcount.items():
-		print(kmer, n)
-
-file = sys.argv[1]
-k_i = int(sys.argv[2])
-
-for defline, seq in mcb185.read_fasta(file):
-	k = k_i
-	kcount = count_kmers(seq, k)
-
-	for kmer, n in kcount.items():
-		print(kmer, n)
-
-	for nts in itertools.product('ACGT', repeat=k):
-		kmer = ''.join(nts)
-		if kmer not in kcount:
-			print(kmer, 0)
-	k += 1
+for defline, seq in mcb185.read_fasta(sys.argv[1]):
+	rc = dogma.revcomp(seq)
+	while n < 1: 
+		for i in range(len(seq) -k + 1):
+			kmer = seq[i:i+k]
+			if kmer not in kcount: kcount[kmer] = 0
+			kcount[kmer] += 1
+			
+		for i in range(len(rc) - k + 1):
+			kmer = rc[i:i+k]
+			if kmer not in kcount: kcount[kmer] = 0
+			kcount[kmer] += 1
+			
+		for nts in itertools.product('ACGT', repeat=k):
+			kmer = ''.join(nts)
+			if kmer not in kcount: 
+				print(kmer)
+				n += 1
+		k += 1
