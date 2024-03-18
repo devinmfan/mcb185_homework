@@ -1,42 +1,30 @@
-import sys
+import gzip
 import mcb185
+import sys
 import dogma
 
-seq = sys.argv[1]
-
-def sig_pep(seq):
-	w = 8
-	s = 1
-	for i in range(0, len(seq) -w +1, s):
-		if i + w <= 30:
-			sp = seq[i:i+w]
-			print("Amino acid sequence:", sp)
-			for aa in sp:
-				hydro_score = dogma.hydropathy(aa)
-			print("Hydropathy score:", hydro_score)
-			if hydro_score >= 2.5 and 'P' not in sp:
-				continue
-
-def trans_reg(seq):
-	w = 11
-	s = 1
-	for i in range(30, len(seq) -w +1, s) :
-		tr = seq[i:i+w]
-		print("Amino acid sequence:", tr)
-		for aa in tr:
-			hydro_score = dogma.hydropathy(aa)
-		print("Hydropathy score:", hydro_score)
-		if hydro_score >= 2.0 and 'P' not in tr:
-			continue
-codon = []
+def sigpep_check(seq):
+	sp = seq[:30]
+	for i in range(len(sp) - 7):
+		signal = sp[i:i+8]
+		if 'P' in signal: continue
+		hydro_score = dogma.hydropathy(signal)
+		if hydro_score >= 2.5: 
+			return True
+	return False
+	
+def transreg_check(seq):
+	tr = seq[30:]
+	for i in range(len(tr) - 10):
+		trans = tr[i:i+11]
+		if 'P' in trans: continue
+		hydro_score = dogma.hydropathy(trans)
+		if hydro_score >= 2.0:
+			return True
+	return False
 
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
-	defwords = defline.split(']')
-	name = defline[0] 
-	for nt in seq:
-		codon.append(nt)
-seq = ''.join(codon)
-x = dogma.translate(seq)
-
-print(trans_reg(x))
-print(sig_pep(x))
+	sigpep_result = sigpep_check(seq)
+	transreg_result = transreg_check(seq)
+	if sigpep_result and transreg_result:
+		print(defline)
