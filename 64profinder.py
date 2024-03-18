@@ -5,33 +5,39 @@ import mcb185
 file = sys.argv[1]
 min_length = int(sys.argv[2])
 
-codon = []
-protein_sequence = []
+proteins = []
+prot_index = 0
 
-for defline, seq in mcb185.read_fasta(sys.argv[1]):
-	defwords = defline.split()
-	name = defline[0]  
+for defline, seq in mcb185.read_fasta(file):
+	codon = []
 	for nt in seq:
 		codon.append(nt)
-
-seq = ''.join(codon)
-rev = dogma.revcomp(seq)
-x = dogma.translate(rev)
-
-pro = []
-deflines = []
-
-for i in range(len(x)):
-	if x[i] == "M":
-		protein_segment = [x[i]]
-		for j in range(i + 1, len(x)):
-			if x[j] == "*":
-				break
-			protein_segment.append(x[j])
-		pro.append(''.join(protein_segment))
-		deflines.append(defline)
-
-for defline, protein in zip(deflines, pro):
-	if len(protein) >= min_length:
-		print(defline)
-		print(protein)
+		
+	seq = ''.join(codon)
+	rev = dogma.revcomp(seq)
+	translated_seq = dogma.translate(rev)
+	
+	protein_segments = []
+	current_segment = []
+	for aa in translated_seq:
+		if aa == "M":
+			if current_segment:
+				protein_segments.append(''.join(current_segment))
+				current_segment = []
+			current_segment.append(aa)
+		elif aa == "*":
+			if current_segment:
+				protein_segments.append(''.join(current_segment))
+				current_segment = []
+		else:
+			current_segment.append(aa)
+			
+	for protein_segment in protein_segments:
+		if len(protein_segment) >= min_length:
+			prot_index += 1
+			prot_defline = f">NC_000913.3-prot-{prot_index}"
+			proteins.append((prot_defline, protein_segment))
+			
+for defline, protein in proteins:
+	print(defline)
+	print(protein)
