@@ -1,3 +1,5 @@
+#Co-authors: Sophia Chen and Devin Fan
+
 import sys
 import mcb185
 
@@ -33,7 +35,7 @@ for frame in range(3):
 					if stop not in stops_used:
 						gene_length = stop - i + 3  
 						if gene_length >= gene_min:  
-							print('gene:', i, j)
+							print('gene:', i+1, j)
 							print('Found in the normal sequence')
 							stops_used[stop] = True
 							break
@@ -53,7 +55,7 @@ for frame in range(3):
 					if stop not in stops_used:
 						gene_length = stop - i + 3  
 						if gene_length >= gene_min:  
-							print('gene:', i, j)
+							print('gene:', i+1, j)
 							print('Found in the anti-sequence')
 							stops_used[stop] = True
 							break
